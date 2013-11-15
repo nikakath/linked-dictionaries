@@ -166,6 +166,7 @@ public class LinkedDictionary<K,V> implements Dictionary<K,V> {
                 this.cached = prev;
                 return prev;
             } // if
+            prev = prev.next;
         } // if
 
         // If we've gotten through the while loop, no elements
@@ -214,7 +215,7 @@ class LDNode<K,V> {
     public LDNode(K key, V value, LDNode<K,V> next) {
         this.key = key;
         this.value = value;
-        this.next = null;
+        this.next = next;
     } // LDNode(K,V,LDNode<K,V>)
 
 } // LDNode<K,V>    

@@ -22,7 +22,7 @@ public class LinkedDictionaryTest {
 	} // testAdd
 	
 	/**
-	 * Another test of the sstatus of the dictionary; a followup
+	 * Another test of the status of the dictionary; a followup
 	 * to the previous test.
 	 */
 	public void testAdd2() throws Exception {
@@ -41,7 +41,7 @@ public class LinkedDictionaryTest {
 		assertEquals(dict.get("b"), "beta");
 		dict.set("a", "aardvark");
 		dict.set("b", "baboon");
-		assertEquals(dict.get("a"), "alpha");
+		assertEquals(dict.get("a"), "aardvark"); // changed to "aardvark" from "alpha"
 		assertEquals(dict.get("b"), "baboon");
 	} // testReplace
 	
@@ -55,9 +55,10 @@ public class LinkedDictionaryTest {
 		dict.set("b", "beta");
 		assertEquals(dict.get("b"), "beta");
 		dict.set("c", "clean");
+		assertEquals(dict.get("c"), "clean"); // added
 		assertEquals(dict.remove("b"), "beta");
 		assertEquals(dict.get("a"), "alpha");
 		assertEquals(dict.get("c"), "clean");
-		assertEquals(dict.containsKey("b"), true);
+		assertEquals(dict.containsKey("b"), false); // changed from "true" to "false"
 	} // testRemove
 } // LinkedDictionaryTest
