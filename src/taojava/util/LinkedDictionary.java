@@ -56,13 +56,13 @@ public class LinkedDictionary<K,V> implements Dictionary<K,V> {
     // | Observers |
     // +-----------+
 
-    @Override
+    
     public V get(K key) throws Exception {
         LDNode<K,V> prev = find(key);
         return prev.next.value;
     } // get(K)
 
-    @Override
+
     public boolean containsKey(K key) {
         try {
             // If find succeeds, the key is there.
@@ -78,12 +78,10 @@ public class LinkedDictionary<K,V> implements Dictionary<K,V> {
     // | Mutators |
     // +----------+
 
-    @Override
     public void set(K key, V value) {
         this.front.next = new LDNode<K,V>(key,value,this.front.next);
     } // set(K,V)
 
-    @Override
     public V remove(K key) throws Exception {
         // The following throws an exception if it's not there, which is fine
         LDNode<K,V> prev = find(key);
@@ -97,7 +95,6 @@ public class LinkedDictionary<K,V> implements Dictionary<K,V> {
         return val;
     } // remove(K)
 
-    @Override
     public void clear() {
         // I love garbage collection.  In C, we'd have to individually
         // free all of the nodes.
@@ -108,22 +105,18 @@ public class LinkedDictionary<K,V> implements Dictionary<K,V> {
     // | Iterators |
     // +-----------+
 
-    @Override
     public Iterator<K> keys() {
         return new Iterator<K>() {
-            @Override
             public K next() {
                 // STUB
                 return null;
             } // next()
 
-            @Override
             public boolean hasNext() {
                 // STUB
                 return false;
             } // hasNext
 
-            @Override
             public void remove() throws UnsupportedOperationException,
                     IllegalStateException {
                 throw new UnsupportedOperationException();
@@ -131,22 +124,18 @@ public class LinkedDictionary<K,V> implements Dictionary<K,V> {
         }; // new Iterator<K>
     } // keys()
 
-    @Override
     public Iterator<V> values() {
         return new Iterator<V>() {
-            @Override
             public V next() {
                 // STUB
                 return null;
             } // next()
 
-            @Override
             public boolean hasNext() {
                 // STUB
                 return false;
             } // hasNext
 
-            @Override
             public void remove() throws UnsupportedOperationException,
                     IllegalStateException {
                 throw new UnsupportedOperationException();
